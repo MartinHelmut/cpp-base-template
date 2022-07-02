@@ -1,6 +1,6 @@
 [commands.build]
 script = [
-  """cmake -GNinja %{debug '-DDEBUG=ON'} -DCMAKE_BUILD_TYPE=%{target} -B build/%{target}""",
+  "cmake -GNinja -DCMAKE_BUILD_TYPE=%{target} -B build/%{target}",
   "ninja -C build/%{target}"
 ]
 description = "Build the application for a given target."
@@ -22,8 +22,3 @@ shortcut = "t"
 description = "Define the application build target."
 type = ["debug", "release"]
 default = "debug"
-
-[params.debug]
-shortcut = "d"
-description = "Set debug mode, even if build type differs."
-type = "boolean"
