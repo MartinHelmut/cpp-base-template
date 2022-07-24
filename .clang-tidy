@@ -15,6 +15,7 @@ Checks: >
   -cppcoreguidelines-macro-usage,
   -readability-function-cognitive-complexity,
   -misc-non-private-member-variables-in-classes,
+  -clang-analyzer-optin.cplusplus.UninitializedObject,
   -misc-static-assert,
   -modernize-use-trailing-return-type,
   -bugprone-easily-swappable-parameters,
