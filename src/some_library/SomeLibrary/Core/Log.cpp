@@ -14,7 +14,7 @@ namespace App {
 Log::Log() {
   std::vector<spdlog::sink_ptr> log_sinks;
 
-  spdlog::level::level_enum level{spdlog::level::debug};
+  const spdlog::level::level_enum level{spdlog::level::debug};
 
   log_sinks.emplace_back(std::make_shared<spdlog::sinks::stdout_color_sink_mt>());
   log_sinks.emplace_back(std::make_shared<spdlog::sinks::basic_file_sink_mt>("app.log", true));
