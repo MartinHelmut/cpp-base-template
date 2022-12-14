@@ -10,13 +10,13 @@ add_subdirectory(doctest)
 FetchContent_Declare(
   fmt
   GIT_REPOSITORY "https://github.com/fmtlib/fmt.git"
-  GIT_TAG 9.0.0
+  GIT_TAG 9.1.0
 )
 add_subdirectory(fmt)
 
 FetchContent_Declare(
   spdlog
   GIT_REPOSITORY "https://github.com/gabime/spdlog.git"
-  GIT_TAG v1.10.0
+  GIT_TAG v1.11.0
 )
 add_subdirectory(spdlog)
