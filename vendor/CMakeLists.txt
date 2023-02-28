@@ -3,7 +3,7 @@ include(FetchContent)
 FetchContent_Declare(
   doctest
   GIT_REPOSITORY "https://github.com/onqtam/doctest.git"
-  GIT_TAG v2.4.9
+  GIT_TAG v2.4.10
 )
 add_subdirectory(doctest)
 
