@@ -1,13 +1,13 @@
-/*
- * Copyright (c) 2022 Martin Helmut Fieber <info@martin-fieber.se>
- */
-
 #include "Log.hpp"
 
-#include <vector>
+#include <spdlog/common.h>
+#include <spdlog/logger.h>
+#include <spdlog/sinks/basic_file_sink.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
+#include <spdlog/spdlog.h>
 
-#include "spdlog/sinks/basic_file_sink.h"
-#include "spdlog/sinks/stdout_color_sinks.h"
+#include <memory>
+#include <vector>
 
 namespace App {
 

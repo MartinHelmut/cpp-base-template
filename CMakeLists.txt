@@ -17,5 +17,9 @@ add_library(project_warnings INTERFACE)
 include(cmake/CompilerWarnings.cmake)
 set_project_warnings(project_warnings)
 
+include(cmake/Packaging.cmake)
+
+enable_testing()
+
 add_subdirectory(vendor)
 add_subdirectory(src)
