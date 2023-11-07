@@ -6,25 +6,16 @@ C++ project template.
 
 The project uses [CMake](https://cmake.org) and [Ninja](https://ninja-build.org).
 
-Build the application in debug mode:
+Thanks to Cmake presets, a full distribution build can be created via:
 
 ```shell
-cmake -GNinja -DCMAKE_BUILD_TYPE=Debug -B build/debug
-ninja -C build/debug
+cmake --workflow --preset dist
 ```
 
-Run the application:
+Also, running tests with CPack:
 
 ```shell
-cd ./build/debug/src/app && ./App
-```
-
-### Using Litr
-
-When using [Litr](https://github.com/krieselreihe/litr), the quick setup to build and run the application is:
-
-```shell
-litr build,start
+ctest --preset all
 ```
 
 ## Disclaimer

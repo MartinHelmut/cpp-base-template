@@ -1,4 +1,5 @@
 build/
+distribution/
 profile.json
 *-profile.json
 *.log

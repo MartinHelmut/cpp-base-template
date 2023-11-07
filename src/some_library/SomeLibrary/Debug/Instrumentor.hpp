@@ -1,7 +1,3 @@
-/*
- * Copyright (c) 2022 Martin Helmut Fieber <info@martin-fieber.se>
- */
-
 #pragma once
 
 #include <algorithm>
@@ -27,8 +23,8 @@ struct ProfileResult {
 };
 
 struct InstrumentationSession {
-  const std::string name;
-  explicit InstrumentationSession(std::string name) : name(std::move(name)) {}
+  std::string name;
+  explicit InstrumentationSession(std::string session_name) : name(std::move(session_name)) {}
 };
 
 class Instrumentor {
@@ -39,7 +35,7 @@ class Instrumentor {
   Instrumentor& operator=(Instrumentor&& other) = delete;
 
   void begin_session(const std::string& name, const std::string& filepath = "results.json") {
-    std::lock_guard lock(m_mutex);
+    const std::lock_guard lock(m_mutex);
 
     if (m_current_session != nullptr) {
       // If there is already a current session, then close it before beginning new one.
@@ -62,7 +58,7 @@ class Instrumentor {
   }
 
   void end_session() {
-    std::lock_guard lock(m_mutex);
+    const std::lock_guard lock(m_mutex);
     internal_end_session();
   }
 
@@ -83,7 +79,7 @@ class Instrumentor {
     json << "\"ts\":" << result.start.count();
     json << "}";
 
-    std::lock_guard lock(m_mutex);
+    const std::lock_guard lock(m_mutex);
     if (m_current_session != nullptr) {
       m_output_stream << json.str();
       m_output_stream.flush();
@@ -158,9 +154,9 @@ class InstrumentationTimer {
   }
 
  private:
-  const std::string m_name;
+  std::string m_name;
   bool m_stopped{false};
-  const std::chrono::time_point<std::chrono::steady_clock> m_start_time_point;
+  std::chrono::time_point<std::chrono::steady_clock> m_start_time_point;
 };
 
 }  // namespace App::Debug
