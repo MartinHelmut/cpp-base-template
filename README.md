@@ -20,5 +20,5 @@ ctest --preset all
 
 ## Disclaimer
 
-And in-depth guide for the project template can be found at
+An in-depth guide for the project template can be found at
 the [blog post I wrote](https://martin-fieber.de/blog/basic-cpp-setup-with-dependency-management) at my website.
